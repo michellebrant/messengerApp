@@ -1,6 +1,8 @@
 defmodule HelloPhoenix.Router do
   use HelloPhoenix.Web, :router
 
+  resources "/registrations", RegistrationController, only: [:new, :create]
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
